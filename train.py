@@ -4,12 +4,12 @@ import numpy as np
 from preprocessing import parse_annotation
 from frontend import *
 
-images_folder="/home/quest/yolo2/RBC_datasets/JPEGImages/"
-annotations_folder="/home/quest/yolo2/RBC_datasets/Annotations/"
+images_folder="/home/yolo2/RBC_datasets/JPEGImages/"
+annotations_folder="/home/yolo2/RBC_datasets/Annotations/"
 
-train_folder="/home/quest/yolo2/train"
-valid_folder="/home/quest/yolo2/valid"
-test_folder="/home/quest/yolo2/test"
+train_folder="/home/yolo2/train"
+valid_folder="/home/yolo2/valid"
+test_folder="/home/yolo2/test"
 
 labels=["RBC"]
 architecture="Tiny Yolo"
@@ -76,7 +76,7 @@ i=1
 for img in train_imgs:
    train_list.append(img['filename'])
    pathh,d,ff,gg,ssd,hh,img_name=img['filename'].split("/")
-   path=os.path.join("/home/quest/yolo2/train/"+img_name)
+   path=os.path.join("/home/yolo2/train/"+img_name)
 #    print(path)
    img=cv2.imread(img['filename'])
    cv2.imwrite(path,img)
@@ -88,7 +88,7 @@ i=1
 for img in val_imgs:
    valid_list.append(img['filename'])
    pathh,d,ff,gg,ssd,hh,img_name=img['filename'].split("/")
-   path=os.path.join("/home/quest/yolo2/valid/"+img_name)
+   path=os.path.join("/home/yolo2/valid/"+img_name)
 #    print(path)
    img=cv2.imread(img['filename'])
    cv2.imwrite(path,img)
@@ -100,7 +100,7 @@ i=1
 for img in test_imgs:
    test_list.append(img['filename'])
    pathh,d,ff,gg,ssd,hh,img_name=img['filename'].split("/") 
-   path=os.path.join("/home/quest/yolo2/test/"+img_name)
+   path=os.path.join("/home/yolo2/test/"+img_name)
 #    print(path)
    img=cv2.imread(img['filename'])
    cv2.imwrite(path,img)
